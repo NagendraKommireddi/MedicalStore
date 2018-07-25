@@ -7,29 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace MedicalStore
 {
     public partial class MainForm : Form
     {
+        DataSet ds = new DataSet();
+        //Main Calling Method
         public MainForm()
         {
             InitializeComponent();
+            Database.SqlCon();
+            MedicineListDetails();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        //Medicine Details DataGridView
+        public void MedicineListDetails()
         {
-
+            string Sql1 = "SELECT * FROM medicines";
+            Database.dataadapter = new SqlDataAdapter(Sql1, Database._con);
+            Database._con.Open();
+            Database.dataadapter.Fill(ds, "Medicines");
+            Database._con.Close();
+            dataGridView1.DataSource = ds.Tables[0];            
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        //Search Medicine Input Method
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            ds.Tables[0].DefaultView.RowFilter = "medName LIKE '" + textBox1.Text + "*'";
         }
     }
 }
