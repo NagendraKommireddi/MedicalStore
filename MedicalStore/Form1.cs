@@ -36,5 +36,16 @@ namespace MedicalStore
         {
             ds.Tables[0].DefaultView.RowFilter = "medName LIKE '" + textBox1.Text + "*'";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            NewBill newBill = new NewBill();
+            newBill.ShowDialog();
+        }
     }
 }
