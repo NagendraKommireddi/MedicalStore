@@ -13,7 +13,7 @@ namespace MedicalStore
 {
     public partial class MainForm : Form
     {
-        DataSet ds = new DataSet();
+        public static DataSet ds = new DataSet();
         //Main Calling Method
         public MainForm()
         {
@@ -29,6 +29,17 @@ namespace MedicalStore
             Database._con.Open();
             Database.dataadapter.Fill(ds, "Medicines");
             Database._con.Close();
+
+            ds.Tables[0].Columns.Add(new DataColumn("medStatus", typeof(string)));
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                if (Convert.ToInt32(row["medUnits"]) == 0)
+                {
+                    row["medStatus"] = "Not Available";
+                }
+                else { row["medStatus"] = "Available"; }
+            }
+
             dataGridView1.DataSource = ds.Tables[0];            
         }
         //Search Medicine Input Method
@@ -39,13 +50,20 @@ namespace MedicalStore
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            AddMedicine addMedicine = new AddMedicine();
+            addMedicine.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             NewBill newBill = new NewBill();
             newBill.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SavedBills savedBills = new SavedBills();
+            savedBills.ShowDialog();
         }
     }
 }
