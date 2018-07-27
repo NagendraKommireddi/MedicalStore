@@ -13,6 +13,10 @@ namespace MedicalStore
     public partial class NewBill : Form
     {
 
+        List<MedicineList> medicineLists;
+        string med1Name = "";
+        int med1Units;
+        int med1Price;
         string billDatePick = "";
 
         public NewBill()
@@ -34,20 +38,29 @@ namespace MedicalStore
             int totalPrice = Convert.ToInt32(label11.Text);
             int totalUnits = Convert.ToInt32(label14.Text);
 
-            string med1Name = textBox3.Text;
-            int med1Units = Convert.ToInt32(textBox4.Text);
-            int med1Price = Convert.ToInt32(label10.Text);
-
-            List<MedicineList> medicineLists = new List<MedicineList>();
-            medicineLists.Add(new MedicineList() { medName = med1Name, medUnits = med1Units, medPrice = med1Price });
-
             MessageBox.Show(billId + "\n" + billDate + "\n" + custName + "\n" + custContact + "\n" + totalPrice + "\n" + totalUnits);
+        }
+        //Adding Medicine List
+        private void button2_Click(object sender, EventArgs e)
+        {
+            med1Name = textBox3.Text;
+            med1Units = Convert.ToInt32(textBox4.Text);
+            med1Price = Convert.ToInt32(label10.Text);
+
+            medicineLists = new List<MedicineList>();
+            medicineLists.Add(new MedicineList() { medName = med1Name, medUnits = med1Units, medPrice = med1Price });
+            foreach (var med in medicineLists)
+            {
+                medicinesListView1.Items.Add(med.medName);
+                medicinesListView1.Items.Add(med.medUnits.ToString());
+                medicinesListView1.Items.Add(med.medPrice.ToString());
+            }
         }
         //Units update in Total
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            int numUnits = 0;
-            numUnits = Convert.ToInt32(textBox4.Text) * 8;
+            string numUnits = "";
+            numUnits = (Convert.ToInt32(textBox4.Text) * 8).ToString();
             label10.Text = Convert.ToString(numUnits);
         }
         //Submit Button
@@ -74,21 +87,5 @@ namespace MedicalStore
         public string medName;
         public int medUnits;
         public int medPrice;
-    }
-    public class AddMedicineList : Form
-    {
-        public static int xText = 347, xNum = 502, xLbl9 = 571, xLbl10 = 604;
-        public static int y = 177;
-
-        TextBox medTextBox1 = new TextBox();
-        NumericUpDown unitsNumUpDown1 = new NumericUpDown();
-        Label rsLabel = new Label();
-        Label costLabel = new Label();
-
-        Point p1 = new Point(xText, y);
-        Point p2 = new Point(xNum, y);
-        Point p3 = new Point(xLbl9, y);
-        Point p4 = new Point(xLbl10, y);
-
     }
 }

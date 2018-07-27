@@ -34,7 +34,7 @@ namespace MedicalStore
                 command.Parameters.AddWithValue("@medUnits", medUnits);
                 command.Parameters.AddWithValue("@unitPrice", unitPrice);
                 int queryResult = command.ExecuteNonQuery();
-                Database.dataadapter.Fill(MainForm.ds, "Medicines");
+                Database.dataadapter.Fill(Database.ds, "Medicines");
                 Database._con.Close();
                 if (queryResult > 0)
                 {
@@ -79,18 +79,13 @@ namespace MedicalStore
         {
             //MainForm.ds.Tables[0].DefaultView.RowFilter = "medName LIKE '" + medNameTextBox2.Text + "*'";
             AutoCompleteStringCollection autoCompleteString = new AutoCompleteStringCollection();
-            for (int i = 0; i < MainForm.ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < Database.ds.Tables[0].Rows.Count; i++)
             {
-                DataRow dataRow = MainForm.ds.Tables[0].Rows[i];
+                DataRow dataRow = Database.ds.Tables[0].Rows[i];
                 //dataRow.Field<string>(2);
                 autoCompleteString.Add(dataRow.Field<string>(2));
             }
             medNameTextBox2.AutoCompleteCustomSource = autoCompleteString;
-        }
-
-        private void AddMedicine_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

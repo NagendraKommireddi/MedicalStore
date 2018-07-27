@@ -180,7 +180,6 @@
             this.Name = "AddMedicine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddMedicine";
-            this.Load += new System.EventHandler(this.AddMedicine_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
