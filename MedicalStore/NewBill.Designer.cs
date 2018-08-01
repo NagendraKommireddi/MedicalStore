@@ -44,13 +44,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.medicinesListView1 = new System.Windows.Forms.ListView();
+            this.newBillAlertLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -160,10 +159,13 @@
             // 
             // textBox3
             // 
+            this.textBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox3.Location = new System.Drawing.Point(278, 175);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(149, 20);
             this.textBox3.TabIndex = 11;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label9
             // 
@@ -205,30 +207,10 @@
             this.label12.TabIndex = 16;
             this.label12.Text = "Rs : ";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(122, 258);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 18);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Units : ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(222, 258);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(16, 18);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "0";
-            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(419, 371);
+            this.button4.Location = new System.Drawing.Point(419, 421);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(146, 40);
             this.button4.TabIndex = 19;
@@ -239,7 +221,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(211, 371);
+            this.button1.Location = new System.Drawing.Point(203, 421);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 40);
             this.button1.TabIndex = 20;
@@ -268,25 +250,39 @@
             // 
             // medicinesListView1
             // 
+            this.medicinesListView1.AutoArrange = false;
+            this.medicinesListView1.BackColor = System.Drawing.SystemColors.Control;
+            this.medicinesListView1.Enabled = false;
+            this.medicinesListView1.LabelEdit = true;
             this.medicinesListView1.Location = new System.Drawing.Point(520, 83);
             this.medicinesListView1.Name = "medicinesListView1";
             this.medicinesListView1.Size = new System.Drawing.Size(268, 282);
+            this.medicinesListView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.medicinesListView1.TabIndex = 24;
             this.medicinesListView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // newBillAlertLbl
+            // 
+            this.newBillAlertLbl.AutoSize = true;
+            this.newBillAlertLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newBillAlertLbl.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.newBillAlertLbl.Location = new System.Drawing.Point(93, 365);
+            this.newBillAlertLbl.Name = "newBillAlertLbl";
+            this.newBillAlertLbl.Size = new System.Drawing.Size(0, 18);
+            this.newBillAlertLbl.TabIndex = 25;
             // 
             // NewBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 504);
+            this.Controls.Add(this.newBillAlertLbl);
             this.Controls.Add(this.medicinesListView1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -329,12 +325,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.ListView medicinesListView1;
+        private System.Windows.Forms.Label newBillAlertLbl;
     }
 }

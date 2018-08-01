@@ -34,16 +34,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.fromDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ToDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1SavedBills = new System.Windows.Forms.DataGridView();
             this.billId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicineList = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalUnits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1SavedBills)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -105,74 +103,68 @@
             this.ToDateTimePicker2.TabIndex = 5;
             this.ToDateTimePicker2.ValueChanged += new System.EventHandler(this.ToDateTimePicker2_ValueChanged);
             // 
-            // dataGridView1
+            // dataGridView1SavedBills
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sno,
+            this.dataGridView1SavedBills.AllowUserToAddRows = false;
+            this.dataGridView1SavedBills.AllowUserToDeleteRows = false;
+            this.dataGridView1SavedBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1SavedBills.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1SavedBills.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1SavedBills.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1SavedBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1SavedBills.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.billId,
             this.customerName,
             this.customerContact,
             this.medicineList,
             this.totalPrice,
-            this.totalUnits,
             this.billDate});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 112);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(960, 386);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // sno
-            // 
-            this.sno.HeaderText = "S.No";
-            this.sno.Name = "sno";
-            this.sno.ReadOnly = true;
+            this.dataGridView1SavedBills.Location = new System.Drawing.Point(12, 112);
+            this.dataGridView1SavedBills.Name = "dataGridView1SavedBills";
+            this.dataGridView1SavedBills.ReadOnly = true;
+            this.dataGridView1SavedBills.Size = new System.Drawing.Size(960, 386);
+            this.dataGridView1SavedBills.TabIndex = 6;
             // 
             // billId
             // 
+            this.billId.DataPropertyName = "billId";
             this.billId.HeaderText = "Bill ID";
             this.billId.Name = "billId";
             this.billId.ReadOnly = true;
             // 
             // customerName
             // 
+            this.customerName.DataPropertyName = "customerName";
             this.customerName.HeaderText = "Customer Name";
             this.customerName.Name = "customerName";
             this.customerName.ReadOnly = true;
             // 
             // customerContact
             // 
+            this.customerContact.DataPropertyName = "customerContact";
             this.customerContact.HeaderText = "Customer Contact";
             this.customerContact.Name = "customerContact";
             this.customerContact.ReadOnly = true;
             // 
             // medicineList
             // 
+            this.medicineList.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.medicineList.DataPropertyName = "medicineList";
             this.medicineList.HeaderText = "Medicine List";
             this.medicineList.Name = "medicineList";
             this.medicineList.ReadOnly = true;
+            this.medicineList.Width = 94;
             // 
             // totalPrice
             // 
+            this.totalPrice.DataPropertyName = "totalPrice";
             this.totalPrice.HeaderText = "Total Price";
             this.totalPrice.Name = "totalPrice";
             this.totalPrice.ReadOnly = true;
             // 
-            // totalUnits
-            // 
-            this.totalUnits.HeaderText = "Total Units";
-            this.totalUnits.Name = "totalUnits";
-            this.totalUnits.ReadOnly = true;
-            // 
             // billDate
             // 
+            this.billDate.DataPropertyName = "billDate";
             this.billDate.HeaderText = "Bill Date";
             this.billDate.Name = "billDate";
             this.billDate.ReadOnly = true;
@@ -184,7 +176,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(984, 550);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView1SavedBills);
             this.Controls.Add(this.ToDateTimePicker2);
             this.Controls.Add(this.fromDateTimePicker1);
             this.Controls.Add(this.label4);
@@ -194,7 +186,7 @@
             this.Name = "SavedBills";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SavedBills";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1SavedBills)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,14 +200,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker fromDateTimePicker1;
         private System.Windows.Forms.DateTimePicker ToDateTimePicker2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sno;
+        private System.Windows.Forms.DataGridView dataGridView1SavedBills;
         private System.Windows.Forms.DataGridViewTextBoxColumn billId;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerContact;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicineList;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalUnits;
         private System.Windows.Forms.DataGridViewTextBoxColumn billDate;
     }
 }

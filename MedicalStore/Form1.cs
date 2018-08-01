@@ -23,15 +23,15 @@ namespace MedicalStore
         //Medicine Details DataGridView
         public void MedicineListDetails()
         {
-            Database.ds.Tables[0].Columns.Add(new DataColumn("medStatus", typeof(string)));
-            foreach (DataRow row in Database.ds.Tables[0].Rows)
-            {
-                if (Convert.ToInt32(row["medUnits"]) == 0)
-                {
-                    row["medStatus"] = "Not Available";
-                }
-                else { row["medStatus"] = "Available"; }
-            }
+            //Database.ds.Tables[0].Columns.Add(new DataColumn("medStatus", typeof(string)));
+            //foreach (DataRow row in Database.ds.Tables[0].Rows)
+            //{
+            //    if (Convert.ToInt32(row["medUnits"]) == 0)
+            //    {
+            //        row["medStatus"] = "Not Available";
+            //    }
+            //    else { row["medStatus"] = "Available"; }
+            //}
 
             dataGridView1.DataSource = Database.ds.Tables[0];            
         }

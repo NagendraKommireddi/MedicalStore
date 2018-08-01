@@ -40,7 +40,6 @@
             this.medName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medUnits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,13 +69,12 @@
             this.medId,
             this.medName,
             this.medUnits,
-            this.unitPrice,
-            this.medStatus});
-            this.dataGridView1.Location = new System.Drawing.Point(63, 131);
+            this.unitPrice});
+            this.dataGridView1.Location = new System.Drawing.Point(183, 132);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 55;
-            this.dataGridView1.Size = new System.Drawing.Size(951, 431);
+            this.dataGridView1.Size = new System.Drawing.Size(708, 431);
             this.dataGridView1.TabIndex = 1;
             // 
             // textBox1
@@ -179,16 +177,6 @@
             this.unitPrice.Name = "unitPrice";
             this.unitPrice.ReadOnly = true;
             // 
-            // medStatus
-            // 
-            this.medStatus.DataPropertyName = "medStatus";
-            this.medStatus.Frozen = true;
-            this.medStatus.HeaderText = "Medicine Status";
-            this.medStatus.MinimumWidth = 200;
-            this.medStatus.Name = "medStatus";
-            this.medStatus.ReadOnly = true;
-            this.medStatus.Width = 200;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,7 +201,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
@@ -224,7 +212,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn medName;
         private System.Windows.Forms.DataGridViewTextBoxColumn medUnits;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medStatus;
     }
 }
 

@@ -34,7 +34,10 @@ namespace MedicalStore
                 command.Parameters.AddWithValue("@medUnits", medUnits);
                 command.Parameters.AddWithValue("@unitPrice", unitPrice);
                 int queryResult = command.ExecuteNonQuery();
+                Database.ds.Clear();
                 Database.dataadapter.Fill(Database.ds, "Medicines");
+                MainForm mf = new MainForm();
+                mf.dataGridView1.DataSource = Database.ds.Tables[0];
                 Database._con.Close();
                 if (queryResult > 0)
                 {
