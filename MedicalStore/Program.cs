@@ -17,6 +17,8 @@ namespace MedicalStore
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+            //Application.Run(new NewBill());
+            //Application.Run(new SavedBills());
         }
     }
 }
